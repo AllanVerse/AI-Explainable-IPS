@@ -1,0 +1,43 @@
+2026-03-11 18:12:12.053 [info] Extension host with pid 809 started
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] Detecting sandbox support...
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] Platform: linux, Shell type: unknown
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] dirname: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/out/vs/workbench/api/node
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] Sandbox helper path: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/resources/helpers/cursorsandbox
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] process.resourcesPath: undefined
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] process.execPath: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/node
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] ripgrep path for sandboxing: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/resources/helpers/rg
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [isSandboxHelperSupported] Starting sandbox support check...
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [checkBinaryAvailable] Resolved binary path: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/resources/helpers/cursorsandbox
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [checkBinaryAvailable] Binary path exists: true
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [isSandboxHelperSupported] Running preflight with binary: /home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/resources/helpers/cursorsandbox
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [isSandboxHelperSupported] CWD: /mnt/c/Users/acer/AppData/Local/Programs/cursor
+2026-03-11 18:12:12.053 [info] [shell-exec:sandbox] [isSandboxHelperSupported] Preflight succeeded, sandbox supported!
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] Sandbox support detected: true, platform: linux, kernelVersion: 6.6.87.2-microsoft-standard-WSL2
+2026-03-11 18:12:12.053 [info] [ExtHostShellExec] Initializing terminal executor with userTerminalHint: undefined
+2026-03-11 18:12:12.070 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-03-11 18:12:12.167 [info] Extension activated success: vscode.emmet — 57ms (code loading: 34ms, activate call: 23ms, activate resolved: 0ms)
+2026-03-11 18:12:12.167 [info] ExtensionService#_doActivateExtension anysphere.cursor-agent-exec, startup: true, activationEvent: '*'
+2026-03-11 18:12:12.167 [info] ExtensionService#_doActivateExtension anysphere.cursor-polyfills-remote, startup: true, activationEvent: '*'
+2026-03-11 18:12:12.168 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-03-11 18:12:12.746 [info] Extension activated success: anysphere.cursor-polyfills-remote — 555ms (code loading: 555ms, activate call: 0ms, activate resolved: 0ms)
+2026-03-11 18:12:12.746 [info] Extension activated success: vscode.git-base — 559ms (code loading: 559ms, activate call: 0ms, activate resolved: 0ms)
+2026-03-11 18:12:12.746 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-03-11 18:12:12.747 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-03-11 18:12:12.920 [info] Extension activated success: vscode.github — 103ms (code loading: 87ms, activate call: 2ms, activate resolved: 14ms)
+2026-03-11 18:12:12.940 [info] ExtensionService#_doActivateExtension anysphere.cursor-mcp, startup: false, activationEvent: 'api', root cause: anysphere.cursor-agent-exec
+2026-03-11 18:12:13.222 [info] Extension activated success: anysphere.cursor-mcp — 225ms (code loading: 197ms, activate call: 1ms, activate resolved: 27ms)
+2026-03-11 18:12:13.249 [info] Extension activated success: vscode.git — 453ms (code loading: 61ms, activate call: 6ms, activate resolved: 386ms)
+2026-03-11 18:12:13.358 [info] Extension activated success: anysphere.cursor-agent-exec — 1090ms (code loading: 468ms, activate call: 10ms, activate resolved: 612ms)
+2026-03-11 18:12:13.360 [info] Eager extensions activated
+2026-03-11 18:12:13.360 [info] ExtensionService#_doActivateExtension anysphere.cursor-commits, startup: false, activationEvent: 'onStartupFinished'
+2026-03-11 18:12:13.361 [info] ExtensionService#_doActivateExtension anysphere.cursor-retrieval, startup: false, activationEvent: 'onStartupFinished'
+2026-03-11 18:12:13.363 [info] ExtensionService#_doActivateExtension anysphere.cursor-shadow-workspace, startup: false, activationEvent: 'onStartupFinished'
+2026-03-11 18:12:13.364 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-03-11 18:12:13.365 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-03-11 18:12:14.196 [info] Extension activated success: anysphere.cursor-shadow-workspace — 724ms (code loading: 719ms, activate call: 1ms, activate resolved: 4ms)
+2026-03-11 18:12:14.197 [info] Extension activated success: vscode.debug-auto-launch — 726ms (code loading: 722ms, activate call: 0ms, activate resolved: 4ms)
+2026-03-11 18:12:14.197 [info] Extension activated success: vscode.merge-conflict — 755ms (code loading: 746ms, activate call: 4ms, activate resolved: 5ms)
+2026-03-11 18:12:14.197 [info] Extension activated success: anysphere.cursor-retrieval — 653ms (code loading: 616ms, activate call: 2ms, activate resolved: 35ms)
+2026-03-11 18:12:14.197 [info] Extension activated success: anysphere.cursor-commits — 254ms (code loading: 214ms, activate call: 1ms, activate resolved: 39ms)
+2026-03-11 18:59:21.194 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2026-03-11 18:59:21.354 [info] Extension activated success: vscode.npm — 150ms (code loading: 127ms, activate call: 4ms, activate resolved: 19ms)

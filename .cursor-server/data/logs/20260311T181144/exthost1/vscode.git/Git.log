@@ -1,0 +1,10 @@
+2026-03-11 18:12:13.272 [info] [main] Log level: Info
+2026-03-11 18:12:13.272 [info] [main] Validating found git in: "/usr/bin/git"
+2026-03-11 18:12:13.272 [info] [main] Using git "2.25.1" from "/usr/bin/git"
+2026-03-11 18:12:13.272 [info] [Model][doInitialScan] Initial repository scan started
+2026-03-11 18:12:13.283 [info] > git rev-parse --show-toplevel [15ms] (getRepositoryRoot)
+2026-03-11 18:12:13.283 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-03-11 18:12:13.287 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-03-11 18:12:23.248 [info] > git config --global user.name [2ms] 
+2026-03-11 18:12:23.259 [info] > git config --global user.email [3ms] 
+2026-03-11 18:12:23.259 [info] [main] Stored git author name in global state:  <>

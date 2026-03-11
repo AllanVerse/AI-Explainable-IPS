@@ -1,0 +1,13 @@
+2026-03-11 19:25:44.535 [error] Error getting repo info: Failed to execute git
+2026-03-11 19:25:44.536 [error] Error: Failed to execute git
+	at B.<anonymous> (/home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/extensions/cursor-retrieval/dist/main.js:2:1124565)
+	at Generator.next (<anonymous>)
+	at o (/home/aln/.cursor-server/bin/68fbec5aed9da587d1c6a64172792f505bafa250/extensions/cursor-retrieval/dist/main.js:2:1122171)
+2026-03-11 19:25:44.622 [error] Error getting repo info: Failed to execute git
+2026-03-11 19:25:44.629 [warning] Failed to get symbolic ref: Failed to execute git
+2026-03-11 19:25:44.639 [warning] Failed to read .git/HEAD: A system error occurred (ENOENT: no such file or directory, open '.git/HEAD')
+2026-03-11 19:25:44.648 [info] Creating Indexing Repo client:  https://repo42.cursor.sh
+2026-03-11 19:25:44.648 [info] Creating repo client with backend url: https://repo42.cursor.sh
+2026-03-11 19:25:44.648 [error] NoWorkspaceUriError
+2026-03-11 19:25:44.747 [warning] Failed to get branches from remote: Failed to execute git
+2026-03-11 19:25:44.756 [warning] Failed to get default branch from git config: Failed to execute git

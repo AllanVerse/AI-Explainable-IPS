@@ -1,0 +1,237 @@
+Server bound to 127.0.0.1:45225 (IPv4)
+Extension host agent listening on 45225
+
+[19:25:35] 
+
+
+
+
+[19:25:35] Extension host agent started.
+[19:25:36] [127.0.0.1][b75aff03][ManagementConnection] New connection established.
+[19:25:36] [127.0.0.1][9390f7bc][ExtensionHostConnection] New connection established.
+[19:25:37] Getting extensions control
+[19:25:37] [CursorProclistService] Config enabled feature (subsample every 10s)
+[19:25:37] [127.0.0.1][9390f7bc][ExtensionHostConnection] <770> Launched Extension Host Process.
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 1
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 2
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 3
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 4
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 5
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 6
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 7
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 8
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 9
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 10
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 11
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 12
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 13
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 14
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 15
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 16
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 17
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 18
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 19
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 20
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 21
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 22
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 23
+[19:25:37] RequestStore#acceptReply was called without receiving a matching request 24
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 25
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 26
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 27
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 28
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 29
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 30
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 31
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 32
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 33
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 34
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 35
+[19:25:39] RequestStore#acceptReply was called without receiving a matching request 36
+[19:25:39] #1: https://api2.cursor.sh/extensions-control - error GET AggregateError [ETIMEDOUT]: 
+[19:25:39] Error getting extensions control manifest AggregateError [ETIMEDOUT]: 
+    at internalConnectMultiple (node:net:1122:18)
+    at internalConnectMultiple (node:net:1190:5)
+    at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+    at listOnTimeout (node:internal/timers:583:11)
+    at process.processTimers (node:internal/timers:519:7) {
+  code: 'ETIMEDOUT',
+  [errors]: [
+    Error: connect ETIMEDOUT 52.5.189.218:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '52.5.189.218',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::1715:f617:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::1715:f617',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 44.217.180.208:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '44.217.180.208',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::3404:43f6:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::3404:43f6',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 3.214.188.64:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '3.214.188.64',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::36a1:4963:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::36a1:4963',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 100.55.209.113:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '100.55.209.113',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::6256:431:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::6256:431',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 52.203.129.191:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '52.203.129.191',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::3650:3ab1:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::3650:3ab1',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 54.144.159.232:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '54.144.159.232',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::2cdb:bda3:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::2cdb:bda3',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 44.205.160.8:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '44.205.160.8',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::12d2:7b1d:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::12d2:7b1d',
+      port: 443
+    },
+    Error: connect ETIMEDOUT 54.144.166.77:443
+        at createConnectionError (node:net:1652:14)
+        at Timeout.internalConnectMultipleTimeout (node:net:1711:38)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -110,
+      code: 'ETIMEDOUT',
+      syscall: 'connect',
+      address: '54.144.166.77',
+      port: 443
+    },
+    Error: connect ENETUNREACH 64:ff9b::22e9:45b8:443 - Local (:::0)
+        at internalConnectMultiple (node:net:1186:16)
+        at Timeout.internalConnectMultipleTimeout (node:net:1716:5)
+        at listOnTimeout (node:internal/timers:583:11)
+        at process.processTimers (node:internal/timers:519:7) {
+      errno: -101,
+      code: 'ENETUNREACH',
+      syscall: 'connect',
+      address: '64:ff9b::22e9:45b8',
+      port: 443
+    }
+  ]
+}

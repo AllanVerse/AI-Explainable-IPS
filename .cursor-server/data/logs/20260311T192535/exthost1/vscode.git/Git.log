@@ -1,0 +1,16 @@
+2026-03-11 19:25:43.505 [info] [main] Log level: Info
+2026-03-11 19:25:43.505 [info] [main] Validating found git in: "/usr/bin/git"
+2026-03-11 19:25:43.536 [info] [main] Using git "2.25.1" from "/usr/bin/git"
+2026-03-11 19:25:43.536 [info] [Model][doInitialScan] Initial repository scan started
+2026-03-11 19:25:43.541 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-03-11 19:25:53.538 [info] > git config --global user.name [2ms] 
+2026-03-11 19:25:53.548 [info] > git config --global user.email [1ms] 
+2026-03-11 19:25:53.548 [info] [main] Stored git author name in global state:  <>
+2026-03-11 19:26:16.547 [info] > git rev-parse --show-toplevel [2ms] (getRepositoryRoot)
+2026-03-11 19:26:16.547 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-03-11 19:26:23.525 [info] > git rev-parse --show-toplevel [21ms] (getRepositoryRoot)
+2026-03-11 19:26:23.525 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-03-11 19:26:25.597 [info] > git rev-parse --show-toplevel [3ms] (getRepositoryRoot)
+2026-03-11 19:26:25.597 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-03-11 19:28:15.497 [info] > git rev-parse --show-toplevel [2ms] (getRepositoryRoot)
+2026-03-11 19:28:15.497 [info] fatal: not a git repository (or any of the parent directories): .git
