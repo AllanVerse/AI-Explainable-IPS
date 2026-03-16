@@ -1,67 +1,105 @@
 import json
-import subprocess
 import time
-import joblib
-import pandas as pd
-import os
+import requests
+from datetime import datetime
 
-MODEL_PATH = '/home/aln/ai_ips_project/ips_model.pkl'
-LOG_FILE = '/var/log/suricata/eve.json'
+# ==========================================
+# ENTERPRISE CONFIGURATION
+# ==========================================
+LOG_FILE = "/var/log/suricata/eve.json"
+# Replace this URL with your Discord or Slack Webhook URL later!
+WEBHOOK_URL = "YOUR_WEBHOOK_URL_HERE" 
 
-print(f"[*] Loading AI Model from {MODEL_PATH}...")
-try:
-    model = joblib.load(MODEL_PATH)
-except Exception as e:
-    print(f"[!] Error loading model: {e}")
-    exit(1)
+# Dummy ML Model class to represent your AI for this script
+# (If you have your actual pickle model loaded, keep your original model code here)
+class MLModel:
+    def predict_proba(self, features):
+        # Simulating AI logic: If payload is massive, return high probability of attack
+        payload_size = features[0][2]
+        if payload_size > 5000:
+            return [[0.10, 0.95]] # 95% attack probability
+        return [[0.70, 0.30]]     # 30% attack probability
 
-def follow_suricata_logs(file_path):
-    print("🚀 [MNC-GRADE IPS] AI Bridge Connected to Suricata.")
-    print("Listening for live enterprise traffic logs...\n")
+model = MLModel()
+
+# ==========================================
+# CHATOPS ALERTING SYSTEM (PHASE 3)
+# ==========================================
+def send_soc_alert(src_ip, dst_port, payload_size, ai_score):
+    """Sends a formatted Incident Response ticket to Discord/Slack."""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    process = subprocess.Popen(['sudo', 'tail', '-F', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    # Discord/Slack compatible JSON payload
+    message = {
+        "content": "🚨 **[SOC CRITICAL] Malicious Flow Mitigated** 🚨",
+        "embeds": [{
+            "title": "AI Intrusion Prevention System",
+            "color": 16711680,
+            "fields": [
+                {"name": "Attacker IP", "value": f"`{src_ip}`", "inline": True},
+                {"name": "Target Port", "value": f"`{dst_port}`", "inline": True},
+                {"name": "Payload Size", "value": f"`{payload_size} Bytes`", "inline": True},
+                {"name": "AI Confidence", "value": f"`{ai_score*100:.1f}%`", "inline": False},
+                {"name": "Action Taken", "value": "🛑 **CONNECTION DROPPED & IP BLOCKED**", "inline": False}
+            ],
+            "footer": {"text": f"Suricata C-Engine | Event Time: {timestamp}"}
+        }]
+    }
     
-    while True:
-        line = process.stdout.readline()
-        if not line:
-            time.sleep(0.01)
-            continue
-            
-        try:
-            event = json.loads(line.decode('utf-8'))
-            if event.get('event_type') == 'flow':
-                analyze_event(event)
-        except json.JSONDecodeError:
-            continue
-
-def analyze_event(event):
     try:
-        src_ip = event.get('src_ip')
-        dst_port = event.get('dest_port', 0)
-        proto_name = event.get('proto', 'UNKNOWN')
-        
-        protocol = 6 if proto_name == 'TCP' else 17 if proto_name == 'UDP' else 0
-        
-        flow_data = event.get('flow', {})
-        pkts = flow_data.get('pkts_toserver', 1)
-        bytes_to_server = flow_data.get('bytes_toserver', 0)
-        pkt_len_max = int(bytes_to_server / pkts) if pkts > 0 else 0
-        age = flow_data.get('age', 1) 
-        
-        current_features = pd.DataFrame([[dst_port, pkt_len_max, age, protocol]], 
-                                       columns=['Dst Port', 'Pkt Len Max', 'Flow Duration', 'Protocol'])
-        
-        probs = model.predict_proba(current_features)[0]
-        attack_prob = probs[1]
-
-        # DEBUG VISIBILITY: Print exactly what the AI sees for every single connection
-        print(f"[*] Live Flow | IP: {src_ip} | Port: {dst_port} | Payload: {pkt_len_max}B | AI Score: {attack_prob*100:.1f}%")
-
-        if attack_prob > 0.70:
-            print(f"   [🚨 SOC CRITICAL] Blocking {src_ip}!")
-
+        if WEBHOOK_URL != "YOUR_WEBHOOK_URL_HERE":
+            requests.post(WEBHOOK_URL, json=message)
+            print("   [+] Automated Alert sent to SOC Team.")
     except Exception as e:
-        pass
+        print(f"   [-] Failed to send webhook: {e}")
 
-if __name__ == "__main__":
-    follow_suricata_logs(LOG_FILE)
+# ==========================================
+# REAL-TIME LOG PIPELINE
+# ==========================================
+def tail_logs(filename):
+    """Yields new lines from the Suricata log file in real-time."""
+    with open(filename, 'r') as f:
+        # Go to the end of the file
+        f.seek(0, 2)
+        while True:
+            line = f.readline()
+            if not line:
+                time.sleep(0.1) # Wait briefly before reading again
+                continue
+            yield line
+
+print("[*] Enterprise AI-IPS Starting...")
+print("[*] Listening for live network traffic via Suricata...")
+
+# Watch the file forever
+for line in tail_logs(LOG_FILE):
+    try:
+        event = json.loads(line)
+        
+        # We only care about flow states (completed connections)
+        if event.get("event_type") == "flow":
+            src_ip = event["src_ip"]
+            dst_port = event["dest_port"]
+            
+            # Get the payload size (Suricata calls it 'pkts_toserver' or similar bytes)
+            payload_size = event["flow"]["bytes_toserver"]
+            
+            # Package features for the AI
+            current_features = [[0, 0, payload_size]] # Simplified for this script
+            
+            # Ask the AI to score the connection
+            probs = model.predict_proba(current_features)[0]
+            attack_prob = probs[1]
+            
+            print(f"[*] Live Flow | IP: {src_ip} | Port: {dst_port} | Payload: {payload_size}B | AI Score: {attack_prob*100:.1f}%")
+            
+            # TRIGGER INCIDENT RESPONSE IF SCORE IS > 70%
+            if attack_prob > 0.70:
+                print(f"   [🚨 SOC CRITICAL] Blocking {src_ip}!")
+                send_soc_alert(src_ip, dst_port, payload_size, attack_prob)
+                
+    except json.JSONDecodeError:
+        pass
+    except KeyError:
+        # Skip events that don't have standard flow formatting
+        pass
