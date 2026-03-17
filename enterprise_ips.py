@@ -8,7 +8,7 @@ from datetime import datetime
 # ENTERPRISE CONFIGURATION
 # ==========================================
 LOG_FILE = "/var/log/suricata/eve.json"
-WEBHOOK_URL = "https://discord.com/api/webhooks/YOUR_WEBHOOK_HERE"
+WEBHOOK_URL = "https://discordapp.com/api/webhooks/1482989802239557814/JDUgwRetmvlJ-QyF41Ocdk0D8TyMquYMvb-Qw47DFhGlrL_YFXri44381nIywhmZeRwl"
 
 class MLModel:
     def __init__(self):

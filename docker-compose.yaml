@@ -1,12 +1,7 @@
-version: '3.8'
-
+version: '3.3'
 services:
   ai-xdr-engine:
     build: .
     container_name: enterprise_ai_ips
-    # Network mode 'host' allows Suricata to sniff the actual server's network interfaces
     network_mode: "host"
-    restart: unless-stopped
-    volumes:
-      # Mount the logs so they are saved to the host machine
-      - ./logs:/var/log/suricata
+    restart: always

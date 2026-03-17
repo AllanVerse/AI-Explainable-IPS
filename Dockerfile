@@ -25,4 +25,6 @@ COPY . .
 RUN suricata-update
 
 # Start Suricata in the background, then launch the AI ChatOps bridge
-CMD suricata -i eth0 -c /etc/suricata/suricata.yaml -D && python3 enterprise_ips.py
+# Start Suricata without Checksum Validation, then launch the AI ChatOps bridge
+# Use the force-config and disable checksums (-k none)
+CMD rm -f /var/run/suricata.pid && suricata -i eth0 -k none -c suricata-force.yaml -D && python3 -u enterprise_ips.py
