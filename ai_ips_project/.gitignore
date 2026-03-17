@@ -1,6 +1,0 @@
-venv/
-__pycache__/
-*.pkl
-.DS_Store
-threat_db.json
-honeypot_audit.log
