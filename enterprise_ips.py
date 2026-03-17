@@ -8,7 +8,7 @@ from datetime import datetime
 # ENTERPRISE CONFIGURATION
 # ==========================================
 LOG_FILE = "/var/log/suricata/eve.json"
-WEBHOOK_URL = "https://discordapp.com/api/webhooks/1482989802239557814/JDUgwRetmvlJ-QyF41Ocdk0D8TyMquYMvb-Qw47DFhGlrL_YFXri44381nIywhmZeRwl"
+WEBHOOK_URL = "https://discordapp.com/api/webhooks/YOUR_WEBHOOK_HERE"
 
 class MLModel:
     def __init__(self):
@@ -61,10 +61,7 @@ def send_soc_alert(src_ip, dst_port, payload_size, ai_score, threat_type, severi
     }
     
     try:
-    try:
-        response = requests.post(WEBHOOK_URL, json=message, timeout=5)
-    except Exception as e:
-        print(f"    [!] Discord Error: {e}")
+        requests.post(WEBHOOK_URL, json=message)
     except Exception:
         pass
 
@@ -76,7 +73,7 @@ def tail_logs(filename):
         time.sleep(1)
         
     with open(filename, 'r') as f:
-        f.seek(0, 0)
+        f.seek(0, 2)
         while True:
             line = f.readline()
             if not line:
@@ -91,7 +88,7 @@ for line in tail_logs(LOG_FILE):
     try:
         event = json.loads(line)
         
-        if event.get("event_type") in ["flow", "alert"]:
+        if event.get("event_type") == "flow":
             src_ip = event.get("src_ip", "Unknown")
             dst_port = event.get("dest_port", 0)
             payload_size = event.get("flow", {}).get("bytes_toserver", 0)

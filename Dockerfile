@@ -24,6 +24,8 @@ COPY . .
 # Update Suricata rules
 RUN suricata-update
 
+RUN apt-get update && apt-get install -y iptables sudo
+
 # Start Suricata in the background, then launch the AI ChatOps bridge
 # Start Suricata without Checksum Validation, then launch the AI ChatOps bridge
 # Use the force-config and disable checksums (-k none)

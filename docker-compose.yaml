@@ -1,7 +1,25 @@
 version: '3.3'
 services:
-  ai-xdr-engine:
-    build: .
+  enterprise_ai_ips:
+    image: ai_ips_project_ai-xdr-engine
     container_name: enterprise_ai_ips
+    privileged: true  # This is often needed alongside NET_ADMIN for iptables
+    cap_add:
+      - NET_ADMIN
     network_mode: "host"
-    restart: always
+    volumes:
+      - ./suricata-force.yaml:/etc/suricata/suricata.yaml
+      - ./logs:/var/log/suricata
+      - .:/app  # This ensures the dashboard can see the same files
+    # ... rest of your config ...
+  vanguard_ui:
+    image: python:3.9-slim
+    container_name: vanguard_ui
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8501:8501"
+    command: sh -c "pip install streamlit pandas && streamlit run dashboard.py --server.address 0.0.0.0"
+    depends_on:
+      - enterprise_ai_ips
