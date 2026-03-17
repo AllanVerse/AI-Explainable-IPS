@@ -1,5 +1,17 @@
-venv/
+# Python
 __pycache__/
-*.pkl
+*.py[cod]
+*.class
+venv/
+.venv/
+
+# Logs & Data
 logs/
 *.log
+*.json
+*.pcap
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
